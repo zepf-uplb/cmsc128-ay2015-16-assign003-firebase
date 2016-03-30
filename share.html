@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Recipe Chef - Share</title>
+		<script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+		<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+  		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  		<link rel="stylesheet" type="text/css" href="main.css"/>
+	</head>
+	<body>
+		<div id="content3">
+			<center><h1>Share</h1>
+			<form onsubmit='submitValues()' id='recipeForm'>
+				<input class="tfield" type='text' id='titleInput' placeholder='Title' required='required'/><br/>
+			    <input class="tfield" type='text' id='classInput' placeholder='Classification' required='required'/><br/>
+			    <textarea class="tarea" id='recipeInput'  placeholder='Recipe' required='required'></textarea><br/>
+			    <input type='submit' id='submitBtn' value='Submit' class="btn btn-danger"/><br/>
+			</form>		
+			<a href="index.html"><button class="btn btn-warning">Home</button></a></center>
+		</div>
+		
+	    <script>
+      		var myDataRef = new Firebase('https://flickering-inferno-3558.firebaseio.com/');
+
+			function submitValues(){
+				var title = $('#titleInput').val();
+         		var classif = $('#classInput').val();
+         		var recipe = $('#recipeInput').val();
+         		myDataRef.push({title: title, classification: classif, recipe: recipe});
+				alert('Thank you for sharing.');
+			}      
+    	</script>
+	</body>
+</html>

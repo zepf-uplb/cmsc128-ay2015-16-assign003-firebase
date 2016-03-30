@@ -1,0 +1,73 @@
+html, body {
+    height: 100%;
+    background: no-repeat center center fixed;
+    background-image: url(food.jpg);	
+	background-size: cover;
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;    
+}
+
+#content1 {
+	height: 500px;
+	width: 800px;
+	background-color: rgba(99,33,0,.8);
+	margin: auto;
+	padding: 15%;
+}
+
+#content2 {
+	height: 500px;
+	width: 800px;
+	background-color: rgba(99,33,0,.8);
+	margin: auto;
+	padding: 3%;
+}	
+
+#content3 {
+	height: 500px;
+	width: 800px;
+	background-color: rgba(99,33,0,.8);
+	margin: auto;
+	padding: 3%;
+	color: black;
+}	
+
+#messagesDiv {
+	background-color: rgba(66,33,0,.8);
+}
+
+div {
+	color: white;
+}
+
+h1 {
+	color: white;
+	margin: 5%;
+}
+
+button {
+	margin: 5%;
+	height: 50px;
+	width: 100px;
+}
+
+.tfield {
+	margin: 1%;
+	height: 40px;
+	width: 500px;	
+}
+
+.tarea {
+	margin: 1%;
+	height: 80px;
+	width: 500px;	
+}
+

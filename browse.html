@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Recipe Chef - Browse</title>
+		<script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+		<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+  		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  		<link rel="stylesheet" type="text/css" href="main.css"/>
+	</head>
+	<body>
+		<div id="content2">
+			<center><h1>Browse</h1>
+			<div id='messagesDiv'></div>
+			<a href="index.html"><button class="btn btn-warning">Home</button></a></center>
+		</div>
+		<script>
+			var myDataRef = new Firebase('https://flickering-inferno-3558.firebaseio.com/');
+			myDataRef.on('child_added', function(snapshot) {
+        		var message = snapshot.val();
+        		displayRecipes(message.classification, message.recipe, message.title);
+     		 });
+      		function displayRecipes(classification, recipe, title) {
+        		$('<div/>').text('  -  '+recipe).prepend($('<em/>').text(classification+')').prepend($('<em/>').text(title+' ('))).appendTo($('#messagesDiv'));
+      		};
+
+
+		</script>
+	</body>
+</html>
